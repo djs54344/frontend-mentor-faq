@@ -13,14 +13,15 @@ body {
     background-position: top;
     background-size: 100% auto;
     font-size: 16px;
+    color: hsl(292, 42%, 14%);
 }
 
 main {
     margin: 30vh auto 0 auto;
     width: 80%;
     background-color: white;
-    max-width: 30vw;
-    padding: 10px;
+    max-width: 28vw;
+    padding: 20px;
     border-radius: 12px;
     font-family: "Work Sans", sans-serif;
 }
@@ -41,6 +42,7 @@ summary {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    color: hsl(292, 42%, 14%);
 }
 
 summary::-webkit-details-marker {
@@ -48,6 +50,41 @@ summary::-webkit-details-marker {
 }
 
 summary::after {
-
     content: url("assets/images/icon-plus.svg")
+}
+
+details[open] summary::after {
+    content: url("assets/images/icon-minus.svg")
+}
+
+details {
+    color: hsl(292, 16%, 49%);
+    padding: 20px 0 5px 0;
+    border-top: 2px solid hsl(0,0%, 95%);
+}
+
+details:first-of-type {
+    border-top: 0 solid black;
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        margin: 15vh auto 0 auto;
+        width: 100%;
+        max-width: 70vw;
+    }
+
+    body {
+        background-size: 150% auto;
+    }
+
+    header {
+        font-size: 1.2em;
+        margin: 10px 0;
+    }
+
+    header > img {
+        width: 10%;
+        height: auto;
+    }
 }
